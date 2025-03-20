@@ -1,37 +1,22 @@
 <?php
+ $name= ' Sirli';
 
-class Cat {
-    use HasWeight;
-}
-
-class Gun {
-    use HasWeight, HasAmmo;
-}
-
-class CrossBow {
-    use HasAmmo;
-}
-
-trait HasAmmo{
-    public $ammo;
-}
-
-trait HasWeight {
-    private $weight;
-
-    public function getWeight(){
-        return $this->weight;
-    }
-    public function setWeight($weight){
-        $this->weight = $weight;
-        if($weight < 0){
-            $this->weight = 0;
-        };
-    }
-}
-
-$cat = new Cat();
-$gun = new Gun();
-$crossbow = new CrossBow;
-var_dump($cat, $gun, $crossbow);
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Helloooo<?php echo $name; ?></h1>
+    <h1>Helloooo<?= $name?></h1>
+    <ul>
+        <?php for($i=0; $i<10; $i++): ?>
+        <li>Item <?=$i?></li>
+        <?php endfor ?>
+    </ul>
+    
+</body>
+</html>
