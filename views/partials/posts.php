@@ -4,9 +4,9 @@
 
 <?php foreach($posts as $post): ?>
     <article class="blog-post">
-        <h2 class="display-5 link-body-emphasis mb-1"><?=$post['title']?></h2>
-        <p class="blog-post-meta">January 1, 2021 by <a href="#"><?=$post['author']?></a></p>
-        <p><?=$post['body']?></p>
+        <h2 class="display-5 link-body-emphasis mb-1"><?=$post->title?></h2>
+        <p class="blog-post-meta"><?=$post->createdDate()->format('Y-m-d H:i:s')?> by <a href="#">-</a></p>
+        <p><?=$post->body?></p>
     </article>
 <?php endforeach ?>
 

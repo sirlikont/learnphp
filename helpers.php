@@ -5,3 +5,8 @@ function dump(...$vars){
     var_dump(...$vars);
     echo '</pre>';
 }
+
+function redirect($path){
+    header("Location: $path");
+    exit;
+}
