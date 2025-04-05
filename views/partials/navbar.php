@@ -15,8 +15,19 @@
                         <path d="M21 21l-5.2-5.2" />
                     </svg>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-            </div>
+                <?php if (auth()): ?>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?=auth()->email?>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                <a class="btn btn-sm btn-outline-secondary me-2" href="/register">Sign up</a>
+                <a class="btn btn-sm btn-outline-primary" href="/login">Login</a>
+                <?php endif; ?>
         </div>
     </header>
 

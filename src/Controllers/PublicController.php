@@ -12,7 +12,7 @@ class PublicController {
         //setcookie('mycookie', 'tasty', time() + 3600, null, null, true, false);
         //dump($_COOKIE);
         //$_SESSION['id'] = 32;
-        dump($_SESSION);
+        //dump($_SESSION);
         $posts = Post::all();
         $heroTitle = 'World news';        
         include 'views/index.php';
